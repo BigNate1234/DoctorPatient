@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.miami.edu/cis324/xml/scheduling" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.miami.edu/cis324/xml/scheduling scheduling.xsd">
+	<doctor doctorId="1">
+		<name>
+			<firstName>John</firstName>
+			<lastName>Smith</lastName>
+		</name>
+		<data>
+			<dob>1941-06-03</dob>
+			<SSN>445-25-3382</SSN>
+		</data>
+		<specialty>GENERAL_MEDICINE</specialty>
+	</doctor>
+	<doctor doctorId="2">
+		<name>
+			<firstName>Jane</firstName>
+			<lastName>Doe</lastName>
+		</name>
+		<data>
+			<dob>1950-10-10</dob>
+			<SSN>582-10-9983</SSN>
+		</data>
+		<specialty>PEDIATRICS</specialty>
+	</doctor>
+	<doctor doctorId="3">
+		<name>
+			<firstName>Mary</firstName>
+			<lastName>Jones</lastName>
+		</name>
+		<data>
+			<dob>1965-12-25</dob>
+			<SSN>180-38-0038</SSN>
+		</data>
+		<specialty>GENERAL_MEDICINE</specialty>
+	</doctor>
+	<doctor doctorId="4">
+		<name>
+			<firstName>Beth</firstName>
+			<lastName>Garcia</lastName>
+		</name>
+		<data>
+			<dob>1964-07-19</dob>
+			<SSN>&lt;</SSN>
+		</data>
+		<specialty>ONCOLOGY</specialty>
+	</doctor>
+	<patient patientId="1">
+		<name>
+			<firstName>John</firstName>
+			<lastName>Lennon</lastName>
+		</name>
+		<data>
+			<dob>1951-05-01</dob>
+			<SSN>123-45-6789</SSN>
+		</data>
+	</patient>
+	<patient patientId="2">
+		<name>
+			<firstName>Paul</firstName>
+			<lastName>McCartney</lastName>
+		</name>
+		<data>
+			<dob>1964-06-23</dob>
+			<SSN>333-22-1123</SSN>
+		</data>
+	</patient>
+	<patient patientId="3">
+		<name>
+			<firstName>George</firstName>
+			<lastName>Harrison</lastName>
+		</name>
+		<data>
+			<dob>1951-05-01</dob>
+			<SSN>1955-09-05</SSN>
+		</data>
+	</patient>
+	<patient patientId="4">
+		<name>
+			<firstName>Ringo</firstName>
+			<lastName>Starr</lastName>
+		</name>
+		<data>
+			<dob>2001-02-28</dob>
+			<SSN>888-88-8888</SSN>
+		</data>
+	</patient>
+	<visit patientId="2" doctorId="3" visitDate="2018-05-09"></visit>
+	<visit patientId="3" doctorId="4" visitDate="2018-05-09"></visit>
+	<visit patientId="1" doctorId="1" visitDate="2018-05-11"></visit>
+	<visit patientId="1" doctorId="1" visitDate="2018-05-12"></visit>
+	<visit patientId="4" doctorId="1" visitDate="2018-05-13"></visit>
+	<visit patientId="3" doctorId="2" visitDate="2018-05-13"></visit>
+	<visit patientId="4" doctorId="2" visitDate="2018-05-14"></visit>
+</root>

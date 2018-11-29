@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	targetNamespace="http://www.miami.edu/cis324/xml/scheduling" 
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.miami.edu/cis324/xml/scheduling">
+
+    <xs:complexType name="Name">
+    	<xs:sequence>
+    		<xs:element name="firstName" type="xs:string" maxOccurs="1"
+    			minOccurs="1">
+    		</xs:element>
+    		<xs:element name="middleInitial" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+    		<xs:element name="lastName" type="xs:string" maxOccurs="1"
+    			minOccurs="1">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PersonalData">
+    	<xs:all>
+    		<xs:element name="dob" type="xs:date" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="SSN" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    	</xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="MedicalSpecialty">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="ONCOLOGY"></xs:enumeration>
+    		<xs:enumeration value="PEDIATRICS"></xs:enumeration>
+    		<xs:enumeration value="GENERAL_MEDICINE"></xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Doctor">
+    	<xs:sequence>
+    		<xs:element name="name" type="Name" minOccurs="1"
+    			maxOccurs="1">
+    		</xs:element>
+    		<xs:element name="data" type="PersonalData" minOccurs="0"
+    			maxOccurs="1">
+    		</xs:element>
+    		<xs:element name="specialty" type="MedicalSpecialty"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    	<xs:attribute name="doctorId" type="xs:integer"></xs:attribute>
+    	<xs:attribute name="active" type="xs:boolean" use="optional"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="Patient">
+    	<xs:sequence>
+    		<xs:element name="name" type="Name" minOccurs="1"
+    			maxOccurs="1">
+    		</xs:element>
+    		<xs:element name="data" type="PersonalData" minOccurs="0"
+    			maxOccurs="1">
+    		</xs:element>
+    	</xs:sequence>
+    	<xs:attribute name="patientId" type="xs:integer"></xs:attribute>
+    	<xs:attribute name="active" type="xs:boolean" use="optional"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="Visit">
+    	<xs:attribute name="patientId" type="xs:integer"></xs:attribute>
+    	<xs:attribute name="doctorId" type="xs:integer"></xs:attribute>
+    	<xs:attribute name="visitId" type="xs:integer"></xs:attribute>
+    	<xs:attribute name="visitDate" type="xs:date"></xs:attribute>
+    </xs:complexType>
+
+    <xs:element name="root">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element name="doctor" type="Doctor" minOccurs="0"
+    				maxOccurs="unbounded">
+    			</xs:element>
+    			<xs:element name="patient" type="Patient" minOccurs="0"
+    				maxOccurs="unbounded">
+    			</xs:element>
+    			<xs:element name="visit" type="Visit" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+
+</xs:schema>
